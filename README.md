@@ -4,7 +4,10 @@ A collection of beginner C programs covering strings, arrays, loops, and basic i
 
 ## Folder structure
 
-- [`Strings/`](Strings/) contains string-related programs and progress notes.
+- [`Strings/`](Strings/) contains string-related programs and study notes:
+  - [Revision notes](Strings/notes.md)
+  - [Viva questions](Strings/VIVA.md)
+  - [Progress checklist](Strings/progress.md)
 
 ## Programs
 
