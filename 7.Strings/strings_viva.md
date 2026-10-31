@@ -1,4 +1,3 @@
-# PPS Lab 7 - Strings Viva Questions
 
 ## Q1. What is a string?
 
