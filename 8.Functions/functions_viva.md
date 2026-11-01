@@ -1,4 +1,8 @@
-# Basics of Functions
+# Functions in C: Viva Questions
+
+[Back to repository README](../README.md) | [Revision notes](functions_notes.md) | [Progress tracker](progress.md)
+
+## Basics of Functions
 
 ## Q1. What is a function?
 

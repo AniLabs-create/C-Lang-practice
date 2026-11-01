@@ -1,5 +1,7 @@
 # Modular Programming (Functions)
 
+[Back to repository README](../README.md) | [Viva questions](functions_viva.md) | [Progress tracker](progress.md)
+
 # What is Modular Programming?
 
 Modular Programming is the process of dividing a large program into smaller reusable functions.

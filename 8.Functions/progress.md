@@ -1,17 +1,23 @@
-# 1. Factorial using Function                       -- Done
+# Functions Practice Progress
 
-# 2. Reverse Number using Function                  -- Done
+[Back to repository README](../README.md)
 
-# 3. Palindrome Number using Function               -- Done
+## Completed
 
-# 4. Prime Number using Function                    -- Done
+- Factorial using a function
+- Reverse a number using a function
+- Check a number for palindrome using a function
+- Check a number for prime using a function
+- Fibonacci series using a function
+- Prime series using a function
+- Find the largest element in an array using a function
+- Reverse a string using a function
+- Check a string for palindrome using a function
 
-# 5. Fibonacci Series using Function                -- Done
+## Currently Learning
 
-# 6. Prime Series using Function                    -- Done
+- None recorded
 
-# 7. Largest Element in Array using Function        -- Done
+## Planned
 
-# 8. String Reverse using Function                  -- Done
-
-# 9. String Palindrome using Function               -- Done
+- New function topics when they are covered in class
