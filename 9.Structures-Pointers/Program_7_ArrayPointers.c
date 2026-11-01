@@ -6,7 +6,7 @@ int main(){
     printf("\n The elements present in the array are: \n");
 
     for(int i = 0; i< 5; i++){
-        printf("%d\n", *(arr + i));
+        printf("%d\n", *(p + i));
     }
     return 0;
 }

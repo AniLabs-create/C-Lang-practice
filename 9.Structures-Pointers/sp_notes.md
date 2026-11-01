@@ -1,12 +1,14 @@
-# Structures & Pointers
+# Structures and Pointers
 
-# Structures
+[Back to repository README](../README.md)
 
-## What is a Structure?
+This chapter contains the structures and pointers programs taught in the course. The examples below follow the same beginner-level approach used in the programs.
 
-A structure is a user-defined data type used to group different data types under a single name.
+## Structures
 
-Example:
+### What is a structure?
+
+A structure stores related data of different types under one name.
 
 ```c
 struct Student
@@ -17,48 +19,15 @@ struct Student
 };
 ```
 
----
+Here, `roll`, `name`, and `marks` are members of the `Student` structure.
 
-## Why Use Structures?
-
-To store related information together.
-
-Example:
-
-```text
-Student
-├── Roll Number
-├── Name
-└── Marks
-```
-
-Without structures:
-
-```c
-int roll;
-char name[100];
-float marks;
-```
-
-With structures:
+### Structure variable
 
 ```c
 struct Student s;
 ```
 
----
-
-# Structure Variable
-
-```c
-struct Student s;
-```
-
----
-
-# Accessing Structure Members
-
-Use the dot operator (`.`)
+Use the dot operator (`.`) to access members of a structure variable:
 
 ```c
 s.roll
@@ -66,104 +35,54 @@ s.name
 s.marks
 ```
 
-Example:
+### Reading a structure member
 
 ```c
-scanf("%d",&s.roll);
-```
-
----
-
-# Program 1: Read and Display Student Details
-
-Structure:
-
-```c
-struct Student
-{
-    int roll;
-    char name[100];
-    float marks;
-};
-```
-
-Input:
-
-```c
-scanf("%d",&s.roll);
+scanf("%d", &s.roll);
 gets(s.name);
-scanf("%f",&s.marks);
+scanf("%f", &s.marks);
 ```
 
-Output:
+## Program 1: Read and Display Student Details
+
+The structure variable `s` stores one student's roll number, name, and marks.
 
 ```c
-printf("%d",s.roll);
-printf("%s",s.name);
-printf("%.2f",s.marks);
-```
+struct Student s;
 
----
-
-# Important: getchar()
-
-Whenever:
-
-```c
-scanf(...)
-```
-
-is followed by:
-
-```c
-gets(...)
-```
-
-use:
-
-```c
+scanf("%d", &s.roll);
 getchar();
+gets(s.name);
+scanf("%f", &s.marks);
 ```
 
-Example:
+The members are displayed using the dot operator:
 
 ```c
-scanf("%d",&s.roll);
+printf("%d", s.roll);
+printf("%s", s.name);
+printf("%.2f", s.marks);
+```
+
+### Why `getchar()` is used
+
+In this program, `scanf()` reads the roll number. After pressing Enter, the newline character can remain in the input buffer. `getchar()` reads that newline before `gets()` reads the name.
+
+```c
+scanf("%d", &s.roll);
 getchar();
 gets(s.name);
 ```
 
-Reason:
+## Array of Structures
 
-```c
-scanf()
-```
-
-leaves:
-
-```text
-\n
-```
-
-inside the input buffer.
-
-```c
-getchar()
-```
-
-removes it.
-
----
-
-# Array of Structures
-
-Store multiple students.
+An array of structures can store records for multiple students.
 
 ```c
 struct Student s[100];
 ```
 
-Access:
+The structure variable at index `i` can be accessed as follows:
 
 ```c
 s[i].roll
@@ -171,488 +90,286 @@ s[i].name
 s[i].marks
 ```
 
-Example:
+Example input loop:
 
 ```c
-scanf("%d",&s[i].roll);
+for (int i = 0; i < n; i++)
+{
+    scanf("%d", &s[i].roll);
+    getchar();
+    gets(s[i].name);
+    scanf("%f", &s[i].marks);
+}
 ```
 
----
+## Program 2: Multiple Students
 
-# Program 2: Multiple Students
-
-Declaration:
+Program 2 uses an array of structures to read and display details of `n` students.
 
 ```c
 struct Student s[n];
-```
 
-Loop:
-
-```c
-for(i=0;i<n;i++)
+for (int i = 0; i < n; i++)
 {
-    // Input
+    scanf("%d", &s[i].roll);
+    getchar();
+    gets(s[i].name);
+    scanf("%f", &s[i].marks);
 }
 ```
 
-Display:
+## Program 3: Student with Highest Marks
 
-```c
-for(i=0;i<n;i++)
-{
-    // Output
-}
-```
-
----
-
-# Program 3: Find Student with Highest Marks
-
-Initialize:
+The first student's marks are stored as the initial highest value:
 
 ```c
 float highest = s[0].marks;
+char name[100];
+
+strcpy(name, s[0].name);
 ```
 
-Using index:
+The remaining students are checked in a loop:
 
 ```c
-int index = 0;
-```
-
-Update:
-
-```c
-if(s[i].marks > highest)
+for (int i = 1; i < n; i++)
 {
-    highest = s[i].marks;
-    index = i;
+    if (s[i].marks > highest)
+    {
+        highest = s[i].marks;
+        strcpy(name, s[i].name);
+    }
 }
 ```
 
-Display:
+`strcpy()` copies the name string stored in the structure into another character array.
+
+## Program 4: Structures with Functions
+
+A structure variable can be passed to a function.
 
 ```c
-s[index].name
-s[index].marks
-```
-
----
-
-# Using strcpy()
-
-Header File:
-
-```c
-#include <string.h>
-```
-
-Syntax:
-
-```c
-strcpy(destination, source);
-```
-
-Example:
-
-```c
-strcpy(topper, s[i].name);
-```
-
-Reason:
-
-Strings cannot be assigned using:
-
-```c
-name = s[i].name;
-```
-
-❌ Wrong
-
----
-
-# Structures with Functions
-
-Prototype:
-
-```c
+void readStudent(struct Student *s);
 void displayStudent(struct Student s);
 ```
 
-Function Call:
+When the function must modify the structure, its address is passed:
+
+```c
+readStudent(&s);
+```
+
+Inside the reading function, structure members are accessed through a pointer using `->`:
+
+```c
+s->roll
+s->name
+s->marks
+```
+
+When the structure only needs to be displayed, its value is passed:
 
 ```c
 displayStudent(s);
 ```
 
----
+## Pointers
 
-# Pointers
+### What is a pointer?
 
-## What is a Pointer?
-
-A variable that stores the address of another variable.
-
-Example:
+A pointer is a variable that stores the address of another variable.
 
 ```c
 int a = 10;
 int *p = &a;
 ```
 
----
+### Address operator (`&`)
 
-# Pointer*Declaration
-
-```c
-int *p;
-```
-
-Rea* as:
-
-```text
-p is a pointer to in*
-```
-
----
-
-# Address Operator (&)
-*Returns address of a variable.
-
-*xample:
+The address operator gives the address of a variable.
 
 ```c
 &a
 ```
 
----
+### Dereference operator (`*`)
 
-# Deref*rence Operator (*)
-
-Returns value *tored at an address.
-
-Example:
-
-``*c
-*p
-```
-
----
-
-# Example
-
-```c
-int*a = 10;
-int *p = &*;
-```
-
-Value of:
-
-```c
-a
-*``
-
-Output:
-
-```text
-10
-```
-
-Value*of:
-
-```c
-&a
-```
-
-Output:
-
-```text*Address of a
-```
-
-Value of*
-
-```c
-p
-```
-
-Output:
-
-```text
-Add*ess of a
-```
-
-Value of:
+The dereference operator gives the value stored at the address held by a pointer.
 
 ```c
 *p
 ```
 
-Output:
-
-```text
-10
-``*
-
----
-
-# Visual*Representation
-
-```text
-a = 10
-
-Ad*ress: 1000
-Value *: 10
-
-
-p = 1000
-```
-
-So:
-
-```*
-*p
-```
-
-gives:
-
-```text
-10
-*``
-
----
-
-# Program 4: Pointer*Basics
+For example:
 
 ```c
 int a = 10;
-int *p =*&a;
+int *p = &a;
 
 printf("%d", a);
-printf("%u*, &a);
-printf("%u", p);
-printf("%d*, **);
+printf("%p", (void *)&a);
+printf("%p", (void *)p);
+printf("%d", *p);
 ```
 
----
+The addresses displayed by `%p` depend on the execution environment.
 
-# Swap Two Numbers Us*ng Pointers
+## Program 5: Pointer Basics
 
-Prototype:
+Program 5 demonstrates the value of the variable, the address of the variable, and the value accessed through the pointer:
 
 ```c
-void*swap(int *a, int *b);
+int quality = 50;
+int *p = &quality;
+
+printf("%d\n", quality);
+printf("%p\n", (void *)&quality);
+printf("%d", *p);
 ```
 
-Logic:
-*```c
-temp = *a;
-*a = *b;
-*b = temp*
-```
+## Program 6: Swap Two Numbers Using Pointers
 
-Function Call:
+The function receives addresses:
 
 ```c
-swap(&x*&y);
+void swap(int *p1, int *p2);
 ```
 
----
-
-# Pass By Value
-
-Ex*mple:
+The function call is:
 
 ```c
-swap(a,b);
+swap(&a, &b);
 ```
 
-Only c*pies are passed.
-
-Original values *emain unchanged.
-
----
-
-# Pass By R*ference
-
-Example:
+The swap logic is:
 
 ```c
-swap(&a,&b*;
+temp = *p1;
+*p1 = *p2;
+*p2 = temp;
 ```
 
-Addresses are passed.
+The address is passed so that the function can change the original variables.
 
-Orig*nal values change.
+## Pass by value and pass by reference
 
----
-
-# Arrays *nd Pointers
-
-Array element:
+### Pass by value
 
 ```c
-*rr[i]
+swap(a, b);
 ```
 
-Equivalent Pointer Form*
+The values are copied into function parameters. A change inside the function does not change the original variables.
+
+### Pass by reference
 
 ```c
-*(arr+i)
+swap(&a, &b);
 ```
 
-Both mean the*same thing.
+The addresses are passed using pointers. A change made through the pointers changes the original variables.
 
----
+## Arrays and Pointers
 
-# Program 5: Arr*y Elements Using Pointers
+An array name can represent the base address of an array.
 
 ```c
-fo*(i=0;i<n;i++)
+int arr[5] = {5, 10, 15, 20, 25};
+int *p = arr;
+```
+
+Array elements can be accessed using pointer arithmetic:
+
+```c
+*(p + i)
+```
+
+It is equivalent to:
+
+```c
+arr[i]
+```
+
+## Program 7: Array Elements Using Pointers
+
+Program 7 declares `p` for the array and uses the pointer in the loop:
+
+```c
+int arr[5] = {5, 10, 15, 20, 25};
+int *p = arr;
+
+for (int i = 0; i < 5; i++)
 {
-    printf("%d", **arr+i));
+    printf("%d\n", *(p + i));
 }
 ```
 
----
+## Program 8: Search for an Array Element Using Pointers
 
-# Program 6: *argest Element Using Pointers
-
-Ini*ialize:
+The array pointer is used to check every element:
 
 ```c
-max = *arr;
-```
+int *p = arr;
 
-Che*k:
-
-```c
-if(*(arr+i) > max)
+for (int i = 0; i < 5; i++)
 {
-    *ax = *(arr+i);
+    if (*(p + i) == n)
+    {
+        printf("The element is present at position %d", i + 1);
+        found = 1;
+        break;
+    }
 }
 ```
 
----
+The value of `i + 1` represents the position of the element in the array.
 
-# Struc*ure Pointers
+## Structure pointers
 
-Declaration:
-
-```c
-s*ruct Student *p;
-```
-
-Pointer Assi*nment:
+A structure pointer stores the address of a structure variable:
 
 ```c
-p = &s;
+struct Student s1;
+struct Student *ptr;
+
+ptr = &s1;
 ```
 
----
+### Arrow operator (`->`)
 
-# A*row Operator (->)
-
-Instead of:
-
-``*c
-(*p).roll
-```
-
-Use:
+The arrow operator accesses members through a structure pointer:
 
 ```c
-p->rol*
+ptr->roll
+ptr->name
+ptr->marks
 ```
 
-Instead of:
+These are equivalent to:
 
 ```c
-(*p).name
-*``
-
-Use:
-
-```c
-p->name
+(*ptr).roll
+(*ptr).name
+(*ptr).marks
 ```
 
----
-
-#*Structure Variable vs Structure Po*nter
-
-Structure Variable:
+### Dot operator versus arrow operator
 
 ```c
-s.*oll
-s.name
-s.marks
+s.roll       /* Structure variable */
+ptr->roll    /* Structure pointer */
 ```
 
-Structure *ointer:
+## Program 9: Structure Pointer
+
+Program 9 assigns the address of `s1` to `ptr` and displays its members:
 
 ```c
-p->roll
-p->name
-p->m*rks
+struct Student *ptr;
+
+ptr = &s1;
+
+printf("Roll no %d\n", ptr->roll);
+printf("Name: %s\n", ptr->name);
+printf("Marks: %.2f\n", ptr->marks);
 ```
-
----
-
-# Most Important Pro*rams
-
-1. Read and Display Student *etails
-2. Multiple Students Using *rray of Structures
-3. Student with*Highest Marks
-4. Structure with Functions
-5. Pointer Basics
-6. Swap Two Numbers Using Pointers
-7. Array Using Pointers
-8. Largest Element Using Pointers
-9. Structure Pointers
-
----
-
-# Exam Strategy
-
-Remember:
-
-## Structure
-
-```c
-struct Student
-{
-};
-```
-
-Access:
-
-```c
-s.member
-```
-
-## Pointer
-
-```c
-int *p;
-```
-
-Address:
-
-```c
-&a
-```
-
-Value:
-
-```c
-*p
-```
-
-## Structure Pointer
-
-```c
-p->member
-```
-
-These three concepts cover most Lab 9 questions.

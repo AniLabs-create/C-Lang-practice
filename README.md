@@ -1,53 +1,41 @@
 # C Programming Practice
 
-A collection of C programs created during my first-year Computer Science coursework. The repository follows the order of the topics covered in class, with source programs, compiled examples, revision notes, viva questions, and progress trackers.
+This repository contains my C programming practice programs from first-year Computer Science coursework. The folders follow the order of the topics covered in class.
 
-## Table of Contents
+Along with source programs, each completed chapter includes revision notes, viva questions, and a progress tracker.
+
+## Contents
 
 - [Repository Structure](#repository-structure)
-- [Learning Roadmap](#learning-roadmap)
 - [Progress Tracker](#progress-tracker)
 - [String Programs](#string-programs)
-- [Function Programs](#function-programs)
-- [Notes and Viva Questions](#notes-and-viva-questions)
+- [Functions](#functions)
+- [Structures and Pointers](#structures-and-pointers)
+- [Revision Notes and Viva Questions](#revision-notes-and-viva-questions)
 - [Compile and Run](#compile-and-run)
-- [Future Topics](#future-topics)
 - [Author](#author)
 
 ## Repository Structure
 
-| Path | Contents |
+| Folder | Contents |
 | --- | --- |
-| [`7.Strings/`](7.Strings/) | 11 string programs, compiled executables, notes, viva questions, and progress tracker |
-| [`8.Functions/`](8.Functions/) | 9 function programs, compiled executables, notes, viva questions, and progress tracker |
-| [`9.Structures-Pointers/`](9.Structures-Pointers/) | 9 structures and pointers programs, compiled executables, notes, viva questions, and progress tracker |
-| [`README.md`](README.md) | Repository overview and learning index |
-| [`tempCodeRunnerFile.c`](tempCodeRunnerFile.c) | Temporary editor runner file |
-
-## Learning Roadmap
-
-1. Basic input and output
-2. Strings and character arrays
-3. Functions and modular programming
-4. Structures and pointers
-
-The repository includes material for strings, functions, structures, and pointers.
+| [7.Strings/](7.Strings/) | String programs, revision notes, viva questions, and progress tracker |
+| [8.Functions/](8.Functions/) | Function programs, revision notes, viva questions, and progress tracker |
+| [9.Structures-Pointers/](9.Structures-Pointers/) | Structure and pointer programs, revision notes, viva questions, and progress tracker |
 
 ## Progress Tracker
 
 | Topic | Status |
 | --- | --- |
-| String programs | Completed |
-| String revision and viva notes | Completed |
-| Function programs | Completed |
-| Function revision and viva notes | Completed |
+| Strings | Completed |
+| Functions | Completed |
 | Structures and pointers | Completed |
 
-See the folder progress trackers:
+Detailed progress is recorded in:
 
-- [`7.Strings/progress.md`](7.Strings/progress.md)
-- [`8.Functions/progress.md`](8.Functions/progress.md)
-- [`9.Structures-Pointers/progress.md`](9.Structures-Pointers/progress.md)
+- [String progress](7.Strings/progress.md)
+- [Function progress](8.Functions/progress.md)
+- [Structures and pointers progress](9.Structures-Pointers/progress.md)
 
 ## String Programs
 
@@ -65,7 +53,7 @@ See the folder progress trackers:
 | [Program_10_CharStats.c](7.Strings/Program_10_CharStats.c) | Count digits, letters, and spaces |
 | [Program_11_SortString.c](7.Strings/Program_11_SortString.c) | Sort a string alphabetically |
 
-## Function Programs
+## Functions
 
 | Program | Topic |
 | --- | --- |
@@ -79,7 +67,7 @@ See the folder progress trackers:
 | [Program_8_StringReverse.c](8.Functions/Program_8_StringReverse.c) | Reverse a string using a function |
 | [Program_9_StringPalindrome.c](8.Functions/Program_9_StringPalindrome.c) | Check a string for palindrome using a function |
 
-## Notes and Viva Questions
+## Revision Notes and Viva Questions
 
 ### Strings
 
@@ -96,7 +84,7 @@ See the folder progress trackers:
 - [Structures and pointers revision notes](9.Structures-Pointers/sp_notes.md)
 - [Structures and pointers viva questions](9.Structures-Pointers/sp_viva.md)
 
-## Structures and Pointer Programs
+## Structures and Pointers
 
 | Program | Topic |
 | --- | --- |
@@ -104,7 +92,7 @@ See the folder progress trackers:
 | [Program_2_MultipleStudents.c](9.Structures-Pointers/Program_2_MultipleStudents.c) | Store and display multiple students using a structure array |
 | [Program_3_HighestMarks.c](9.Structures-Pointers/Program_3_HighestMarks.c) | Find the student with the highest marks |
 | [Program_4_StudentFunctions.c](9.Structures-Pointers/Program_4_StudentFunctions.c) | Read and display student details using functions |
-| [Program_5_PointerBasics.c](9.Structures-Pointers/Program_5_PointerBasics.c) | Display a variable value and address |
+| [Program_5_PointerBasics.c](9.Structures-Pointers/Program_5_PointerBasics.c) | Display a variable value, address, and dereferenced value |
 | [Program_6_SwapPointers.c](9.Structures-Pointers/Program_6_SwapPointers.c) | Swap two numbers using pointers |
 | [Program_7_ArrayPointers.c](9.Structures-Pointers/Program_7_ArrayPointers.c) | Access array elements using pointers |
 | [Program_8_SearchPointer.c](9.Structures-Pointers/Program_8_SearchPointer.c) | Search an array element using pointers |
@@ -140,12 +128,6 @@ From the repository root, a function program can be compiled with:
 gcc 8.Functions/Program_1_Factorial.c -o 8.Functions/Program_1_Factorial.exe
 .\8.Functions\Program_1_Factorial.exe
 ```
-
-## Future Topics
-
-- More advanced structures and pointers programs as coursework topics are covered
-
-Additional structures and pointers programs will be added only as coursework topics are covered.
 
 ## Author
 

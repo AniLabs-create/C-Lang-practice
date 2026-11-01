@@ -1,39 +1,18 @@
-# Structures & Pointers Viva Questions
+# Structures and Pointers Viva Questions
 
-# Structures
+[Back to repository README](../README.md)
 
-## Q1. What is a structure?
+## Structures
 
-A structure is a user-defined data type used to group different data types under a single name.
+### Q1. What is a structure?
 
-Example:
+A structure is a user-defined data type used to group related data of different types under one name.
 
-```c
-struct Student
-{
-    int roll;
-    char name[100];
-    float marks;
-};
-```
+### Q2. Why are structures used?
 
----
+Structures store related information together, such as a student's roll number, name, and marks.
 
-## Q2. Why do we use structures?
-
-To store related data together.
-
-Example:
-
-```text
-Roll Number
-Name
-Marks
-```
-
----
-
-## Q3. How do you declare a structure?
+### Q3. How do you declare a structure?
 
 ```c
 struct Student
@@ -44,19 +23,15 @@ struct Student
 };
 ```
 
----
-
-## Q4. How do you create a structure variable?
+### Q4. How do you create a structure variable?
 
 ```c
 struct Student s;
 ```
 
----
+### Q5. How do you access members of a structure variable?
 
-## Q5. How do you access structure members?
-
-Using the dot operator (`.`)
+Use the dot operator (`.`):
 
 ```c
 s.roll
@@ -64,413 +39,177 @@ s.name
 s.marks
 ```
 
----
+### Q6. What is an array of structures?
 
-## Q6. What is an array of structures?
-
-A collection of structure variables.
+It is an array whose elements are structure variables. It stores records for multiple entities.
 
 ```c
 struct Student s[100];
 ```
 
----
+### Q7. Why do we use an array of structures?
 
-## Q7. Why do we use arrays of structures?
+It stores and processes multiple records, such as details of several students.
 
-To store information for multiple records.
+### Q8. Can a structure contain different data types?
 
-Example:
+Yes. For example, a structure can contain an integer, character array, and float.
 
-```text
-Multiple Students
-Multiple Employees
-Multiple Books
-```
+### Q9. What is the difference between an array and a structure?
 
----
+An array stores elements of the same data type. A structure can store members of different data types.
 
-## Q8. Can a structure contain an array?
+### Q10. What is `getchar()` used for in these programs?
 
-Yes.
+It reads the newline left in the input buffer after `scanf()` so that `gets()` reads the name correctly.
 
-Example:
+## Pointers
 
-```c
-struct Student
-{
-    char name[100];
-};
-```
-
----
-
-## Q9. Can a structure contain different data types?
-
-Yes.
-
-Example:
-
-```c
-int
-float
-char
-```
-
-can exist in the same structure.
-
----
-
-## Q10. What is the difference between an array and a structure?
-
-### Array
-
-Stores similar data types.
-
-```c
-int arr[10];
-```
-
-### Structure
-
-Stores different data types.
-
-```c
-struct Student
-{
-    int roll;
-    float marks;
-};
-```
-
----
-
-# Pointers
-
-## Q11. What is a pointer?
+### Q11. What is a pointer?
 
 A pointer is a variable that stores the address of another variable.
 
----
-
-## Q12. How do you declare a pointer?
+### Q12. How do you declare an integer pointer?
 
 ```c
 int *p;
 ```
 
----
+### Q13. What does `&` mean?
 
-## Q13. What does '&'*mean?
-
-Address-of operator.
-
-Examp*e:
+It is the address-of operator and gives the address of a variable.
 
 ```c
 &a
 ```
 
-Returns address o* variable `a`.
+### Q14. What does `*` mean with a pointer?
 
----
-
-## Q14. What *oes '*' mean?
-
-Dereference operato*.
-
-Example:
+It is the dereference operator. It gives the value stored at the address held by the pointer.
 
 ```c
 *p
 ```
 
-Returns *he value stored at the address.
+### Q15. What is the difference between `p` and `*p`?
 
--*-
+`p` contains the address. `*p` contains the value stored at that address.
 
-## Q15. What is the difference *etween p and *p?
-
-```c
-p
-```
-
-cont*ins an address.
-
-```c
-*p
-```
-
-cont*ins the value stored at that addre*s.
-
----
-
-## Q16. What is pointer i*itialization?
+### Q16. How is a pointer initialized?
 
 ```c
 int a = 10;
-*nt *p = &a;
+int *p = &a;
 ```
 
----
+### Q17. What is dereferencing?
 
-## Q17. What*is dereferencing?
+Dereferencing means accessing the value at the address stored in a pointer.
 
-Accessing a val*e through a pointer.
+### Q18. How is an address printed?
 
-Example:
-
-``*c
-*p
-```
-
----
-
-## Q18. What is a N*LL pointer?
-
-A pointer pointing to*nothing.
+An address is printed with `%p`, and the address expression is cast to `void *`.
 
 ```c
-int *p = NULL;
+printf("%p", (void *)&a);
 ```
-*---
 
-## Q19. Why are pointers used*
+## Parameter passing
 
-- Pass by reference
-- Arrays*- Structures
-- Efficient memory ac*ess
+### Q19. What is pass by value?
 
----
+A copy of a value is passed to the function. Changes made inside the function do not affect the original value.
 
-## Q20. What is a pointe* variable?
+### Q20. What is pass by reference?
 
-A variable that stores*memory addresses.
+The address of a variable is passed to a function using a pointer. Changes made through the pointer affect the original variable.
 
----
+### Q21. Why does the pointer swap program work?
 
-#*Pointer Basics
+Addresses of the original variables are passed to the function. The function changes the values stored at those addresses.
 
-## Q21. What is th* output?
+### Q22. What is the prototype of the swap function?
+
+For the two integer pointers used in Program 6:
 
 ```c
-int a = 10;
-int *p * &a;
-
-printf("%d", *p);
+void swap(int *p1, int *p2);
 ```
 
-Outpu*:
-
-```text
-10
-```
-
----
-
-## Q22. Wh*t is the output?
+### Q23. How is `swap()` called?
 
 ```c
-int a = 10;*
-printf("%u", &a);
+swap(&a, &b);
 ```
 
-Output:
-
-`*`text
-Address of a
-```
-
----
-
-## Q2*. What is the relation between p*and &a?
+### Q24. What is the logic used to swap two numbers with pointers?
 
 ```c
-int**p = &a;
+temp = *p1;
+*p1 = *p2;
+*p2 = temp;
 ```
 
-Then:
+## Arrays and pointers
+
+### Q25. How are array elements related to pointers?
+
+The array name represents the base address of the array. With pointer `p` assigned the array address:
 
 ```c
-p*== &a
+*(p + i)
 ```
 
----
-
-## Q24. What is*the relation between *p and a?
-
-``*c
-*p == a*```
-
----
-
-# Parameter Passing
-
-## *25. What is Pass by Value?
-
-A copy*of the variable is sent to the fun*tion.
-
-Changes inside the function*do not affect the original variabl*.
-
----
-
-## Q26. What is Pass by Re*erence?
-
-The address of the variab*e is sent to the function.
-
-Change* inside the function affect the or*ginal variable.
-
----
-
-## Q27. Whic* uses pointers?
-
-Pass by Reference*
-
----
-
-## Q28. Why is swap using p*inters successful?
-
-Because addres*es are passed.
-
-The function modif*es the original variables.
-
----
-
-#* Q29. Prototype of swap using poin*ers?
+accesses the same element as:
 
 ```c
-void swap(int *a, int **);
+arr[i]
 ```
 
----
+### Q26. What does `p + i` represent?
 
-## Q30. Function call*for swap?
+It represents the address of the element at index `i`.
+
+### Q27. What does `*(p + i)` represent?
+
+It represents the value at index `i`.
+
+### Q28. How is an array searched using pointers in Program 8?
+
+Each element is checked using `*(p + i)`. If it matches the input value, the position is printed using `i + 1`.
+
+## Structure pointers
+
+### Q29. How do you declare a structure pointer?
 
 ```c
-swap(&x, &y);
+struct Student *ptr;
 ```
-*---
 
-## Q31. Logic for swapping us*ng pointers?
+### Q30. How do you store the address of a structure variable?
 
 ```c
-temp = *a;
-*a =**b;
-*b = temp;
+ptr = &s1;
 ```
 
----
+### Q31. What does `ptr->roll` mean?
 
-# Arrays *nd Pointers
+It accesses the `roll` member through the structure pointer `ptr`.
 
-## Q32. How is an arr*y passed to a function?
+### Q32. What is the difference between `.` and `->`?
 
-```c
-func*ion(arr);
-```
-
----
-
-## Q33. What i* the relationship between arrays a*d pointers?
-
-Array name stores the*base address of the array.
-
----
-
-#* Q34. What is equivalent to arr[i]*
-
-```c
-*(arr+i)
-```
-
----
-
-## Q35. *hat does arr+i represent?
-
-Address*of the ith element.
-
----
-
-## Q36. *hat does *(arr+i) represent?
-
-Valu* of the ith element.
-
----
-
-# Struc*ure Pointers
-
-## Q37. How do you d*clare a structure pointer?
-
-```c
-s*ruct Student *p;
-```
-
----
-
-## Q38.*How do you store the address of a *tructure?
-
-```c
-p = &s;
-```
-
----
-
-*# Q39. What does p->roll mean?
-
-Ac*ess the roll member through a stru*ture pointer.
-
----
-
-## Q40. What is the difference between . and -> ?
-
-### Dot Operator
-
-Used with structure variables.
+The dot operator is used with a structure variable:
 
 ```c
 s.roll
 ```
 
-### Arrow Operator
-
-Used with structure pointers.
+The arrow operator is used with a structure pointer:
 
 ```c
-p->roll
+ptr->roll
 ```
 
----
+### Q33. Is `ptr->roll` the same as `(*ptr).roll`?
 
-## Q41. Is p->roll same as (*p).roll?
-
-Yes.
-
-```c
-p->roll
-```
-
-is equivalent to
-
-```c
-(*p).roll
-```
-
----
-
-# Frequently Asked Viva Questions
-
-1. What is a structure?
-2. Why are structures used?
-3. What is an array of structures?
-4. What is a pointer?
-5. What does '&' do?
-6. What does '*' do?
-7. Difference between p and *p?
-8. What is dereferencing?
-9. What is pass by value?
-10. What is pass by reference?
-11. Why are pointers used in swap?
-12. What is arr[i] equivalent to?
-13. What is a structure pointer?
-14. Difference between . and -> ?
-15. What is a NULL pointer?
+Yes. The arrow operator is another way of accessing a structure member through a pointer.
