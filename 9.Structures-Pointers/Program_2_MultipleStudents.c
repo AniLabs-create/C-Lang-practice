@@ -1,7 +1,6 @@
 //Program 2: Store and Display Multiple Students Using Array of Structures
 
 #include <stdio.h>
-#include <string.h>
 
 struct Student
 {
@@ -29,8 +28,7 @@ int main()
         getchar();
 
         printf("Enter Name: ");
-        fgets(s[i].name, sizeof(s[i].name), stdin);
-        s[i].name[strcspn(s[i].name, "\n")] = '\0';
+        gets(s[i].name);
 
         printf("Enter Marks: ");
         scanf("%f", &s[i].marks);

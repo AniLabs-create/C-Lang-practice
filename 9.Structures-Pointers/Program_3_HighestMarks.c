@@ -21,8 +21,7 @@ int main()
     for(int i = 0; i < n; i++)
     {
         printf("Enter the name of Student %d: ", i + 1);
-        fgets(s[i].name, sizeof(s[i].name), stdin);
-        s[i].name[strcspn(s[i].name, "\n")] = '\0';
+        gets(s[i].name);
 
         printf("Enter the Student %d's marks: ", i + 1);
         scanf("%f", &s[i].marks);

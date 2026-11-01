@@ -1,6 +1,5 @@
 // Read student details using structures and display them using functions
 #include <stdio.h>
-#include <string.h>
 
 struct Student
 {
@@ -32,8 +31,7 @@ void readStudent(struct Student *s)
     getchar();
 
     printf("Enter Name: ");
-    fgets(s->name, 100, stdin);
-    s->name[strcspn(s->name, "\n")] = '\0';
+    gets(s->name);
 
     printf("Enter Marks: ");
     scanf("%f", &s->marks);
