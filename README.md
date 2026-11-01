@@ -8,6 +8,8 @@ A collection of beginner C programs covering strings, functions, structures, poi
   - [Revision notes](7.Strings/strings_notes.md)
   - [Viva questions](7.Strings/strings_viva.md)
 - [`8.Functions/`](8.Functions/) contains function programs and study notes.
+  - [Revision notes](8.Functions/functions_notes.md)
+  - [Viva questions](8.Functions/functions_viva.md)
 - [`9.Structures-Pointers/`](9.Structures-Pointers/) contains structures and pointers programs and study notes.
 
 ## Programs
@@ -25,6 +27,15 @@ A collection of beginner C programs covering strings, functions, structures, poi
 | [Program_9_FirstWord.c](7.Strings/Program_9_FirstWord.c) | Print only the first word of a string |
 | [Program_10_CharStats.c](7.Strings/Program_10_CharStats.c) | Count digits, letters, and spaces |
 | [Program_11_SortString.c](7.Strings/Program_11_SortString.c) | Sort a string alphabetically |
+| [Program_1_Factorial.c](8.Functions/Program_1_Factorial.c) | Calculate factorial using a function |
+| [Program_2_ReverseNumber.c](8.Functions/Program_2_ReverseNumber.c) | Reverse a number using a function |
+| [Program_3_PalindromeNumber.c](8.Functions/Program_3_PalindromeNumber.c) | Check whether a number is a palindrome using a function |
+| [Program_4_PrimeNumber.c](8.Functions/Program_4_PrimeNumber.c) | Check whether a number is prime using a function |
+| [Program_5_FibonacciSeries.c](8.Functions/Program_5_FibonacciSeries.c) | Print a Fibonacci series using a function |
+| [Program_6_PrimeSeries.c](8.Functions/Program_6_PrimeSeries.c) | Print prime numbers using a function |
+| [Program_7_LargestElement.c](8.Functions/Program_7_LargestElement.c) | Find the largest array element using a function |
+| [Program_8_StringReverse.c](8.Functions/Program_8_StringReverse.c) | Reverse a string using a function |
+| [Program_9_StringPalindrome.c](8.Functions/Program_9_StringPalindrome.c) | Check whether a string is a palindrome using a function |
 
 ## Compile and run
 
