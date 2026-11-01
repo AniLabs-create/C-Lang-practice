@@ -6,7 +6,7 @@ int main(){
     printf("Enter a number: ");
     scanf("%d", &n);
     fibonacci(n);
-    
+
     return 0;
 }
 void fibonacci(int num){
