@@ -20,7 +20,7 @@ A collection of C programs created during my first-year Computer Science coursew
 | --- | --- |
 | [`7.Strings/`](7.Strings/) | 11 string programs, compiled executables, notes, viva questions, and progress tracker |
 | [`8.Functions/`](8.Functions/) | 9 function programs, compiled executables, notes, viva questions, and progress tracker |
-| [`9.Structures-Pointers/`](9.Structures-Pointers/) | Placeholder for upcoming structures and pointers material |
+| [`9.Structures-Pointers/`](9.Structures-Pointers/) | 9 structures and pointers programs, compiled executables, notes, viva questions, and progress tracker |
 | [`README.md`](README.md) | Repository overview and learning index |
 | [`tempCodeRunnerFile.c`](tempCodeRunnerFile.c) | Temporary editor runner file |
 
@@ -31,7 +31,7 @@ A collection of C programs created during my first-year Computer Science coursew
 3. Functions and modular programming
 4. Structures and pointers
 
-The first three areas have material in this repository. Structures and pointers are planned for future coursework.
+The repository includes material for strings, functions, structures, and pointers.
 
 ## Progress Tracker
 
@@ -41,12 +41,13 @@ The first three areas have material in this repository. Structures and pointers 
 | String revision and viva notes | Completed |
 | Function programs | Completed |
 | Function revision and viva notes | Completed |
-| Structures and pointers | Planned |
+| Structures and pointers | Completed |
 
 See the folder progress trackers:
 
 - [`7.Strings/progress.md`](7.Strings/progress.md)
 - [`8.Functions/progress.md`](8.Functions/progress.md)
+- [`9.Structures-Pointers/progress.md`](9.Structures-Pointers/progress.md)
 
 ## String Programs
 
@@ -90,6 +91,25 @@ See the folder progress trackers:
 - [Functions revision notes](8.Functions/functions_notes.md)
 - [Functions viva questions](8.Functions/functions_viva.md)
 
+### Structures and Pointers
+
+- [Structures and pointers revision notes](9.Structures-Pointers/sp_notes.md)
+- [Structures and pointers viva questions](9.Structures-Pointers/sp_viva.md)
+
+## Structures and Pointer Programs
+
+| Program | Topic |
+| --- | --- |
+| [Program_1_StudentStructure.c](9.Structures-Pointers/Program_1_StudentStructure.c) | Read and display student details using a structure |
+| [Program_2_MultipleStudents.c](9.Structures-Pointers/Program_2_MultipleStudents.c) | Store and display multiple students using a structure array |
+| [Program_3_HighestMarks.c](9.Structures-Pointers/Program_3_HighestMarks.c) | Find the student with the highest marks |
+| [Program_4_StudentFunctions.c](9.Structures-Pointers/Program_4_StudentFunctions.c) | Read and display student details using functions |
+| [Program_5_PointerBasics.c](9.Structures-Pointers/Program_5_PointerBasics.c) | Display a variable value and address |
+| [Program_6_SwapPointers.c](9.Structures-Pointers/Program_6_SwapPointers.c) | Swap two numbers using pointers |
+| [Program_7_ArrayPointers.c](9.Structures-Pointers/Program_7_ArrayPointers.c) | Access array elements using pointers |
+| [Program_8_SearchPointer.c](9.Structures-Pointers/Program_8_SearchPointer.c) | Search an array element using pointers |
+| [Program_9_StructurePointer.c](9.Structures-Pointers/Program_9_StructurePointer.c) | Access structure members using a structure pointer |
+
 ## Compile and Run
 
 Install GCC and confirm it is available from the terminal:
@@ -123,11 +143,9 @@ gcc 8.Functions/Program_1_Factorial.c -o 8.Functions/Program_1_Factorial.exe
 
 ## Future Topics
 
-- Structures
-- Pointers
-- Programs that combine structures and pointers
+- More advanced structures and pointers programs as coursework topics are covered
 
-These topics will be added only as coursework programs and study material are available in the repository.
+Additional structures and pointers programs will be added only as coursework topics are covered.
 
 ## Author
 

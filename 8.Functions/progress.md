@@ -20,4 +20,4 @@
 
 ## Planned
 
-- New function topics when they are covered in class
+- None recorded
