@@ -1,5 +1,6 @@
 // pallindrome
 #include <stdio.h>
+#include <string.h>
 
 int main()
 {
@@ -7,7 +8,8 @@ int main()
     int len = 0, i;
     int flag = 1;
 
-    gets(str);
+    fgets(str, sizeof(str), stdin);
+    str[strcspn(str, "\n")] = '\0';
 
     while(str[len] != '\0')
     {

@@ -1,4 +1,4 @@
-# Modular Programming (Functions) - PPS Lab 8 Quick Revision
+# Modular Programming (Functions)
 
 # What is Modular Programming?
 

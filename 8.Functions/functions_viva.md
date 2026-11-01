@@ -1,5 +1,3 @@
-# PPS Lab 8 - Modular Programming (Functions) Viva Questions
-
 # Basics of Functions
 
 ## Q1. What is a function?
