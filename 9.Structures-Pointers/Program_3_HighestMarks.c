@@ -18,7 +18,7 @@ int main()
 
     struct Student s[n];
 
-    for(int i = 0; i < n; i++)
+    for (int i = 0; i < n; i++)
     {
         printf("Enter the name of Student %d: ", i + 1);
         gets(s[i].name);
@@ -34,9 +34,9 @@ int main()
 
     strcpy(name, s[0].name);
 
-    for(int i = 1; i < n; i++)
+    for (int i = 1; i < n; i++)
     {
-        if(s[i].marks > highest)
+        if (s[i].marks > highest)
         {
             highest = s[i].marks;
             strcpy(name, s[i].name);

@@ -11,6 +11,7 @@ Along with source programs, each completed chapter includes revision notes, viva
 - [String Programs](#string-programs)
 - [Functions](#functions)
 - [Structures and Pointers](#structures-and-pointers)
+- [Battle Arena](#battle-arena)
 - [Revision Notes and Viva Questions](#revision-notes-and-viva-questions)
 - [Compile and Run](#compile-and-run)
 - [Author](#author)
@@ -22,6 +23,7 @@ Along with source programs, each completed chapter includes revision notes, viva
 | [7.Strings/](7.Strings/) | String programs, revision notes, viva questions, and progress tracker |
 | [8.Functions/](8.Functions/) | Function programs, revision notes, viva questions, and progress tracker |
 | [9.Structures-Pointers/](9.Structures-Pointers/) | Structure and pointer programs, revision notes, viva questions, and progress tracker |
+| [battlearena.c](battlearena.c) | Text-based battle game demonstrating structures and pointers |
 
 ## Progress Tracker
 
@@ -66,6 +68,17 @@ Detailed progress is recorded in:
 | [Program_7_LargestElement.c](8.Functions/Program_7_LargestElement.c) | Find the largest array element using a function |
 | [Program_8_StringReverse.c](8.Functions/Program_8_StringReverse.c) | Reverse a string using a function |
 | [Program_9_StringPalindrome.c](8.Functions/Program_9_StringPalindrome.c) | Check a string for palindrome using a function |
+
+## Battle Arena
+
+[battlearena.c](battlearena.c) is an interactive console game that combines structures and structure pointers. The player chooses sword or magic attacks, manages magic cooldowns, tracks lives and health, and battles a Dark Knight boss.
+
+Compile and run it from the repository root:
+
+```bash
+gcc battlearena.c -o battlearena
+./battlearena
+```
 
 ## Revision Notes and Viva Questions
 
